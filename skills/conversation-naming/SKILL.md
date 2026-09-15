@@ -9,7 +9,7 @@ Use this skill at the start of every new conversation in this project, before do
 
 1. Ask the user for the exact title to use. If the user's first message clearly supplies a title, use that title instead of asking again.
 2. Tell the user to enter `/rename`, then enter that exact title in the Codex naming prompt. Do not claim that the title was changed: the agent has no tool to read or mutate the conversation title.
-3. Wait for the user to confirm the rename is complete. Do not inspect files, run commands, analyze the task, or make changes before that confirmation.
-4. After confirmation, acknowledge the title and continue with the user's pending request.
+3. Tell the user to reply with `1` after completing the rename. Wait for `1` as confirmation. Do not inspect files, run commands, analyze the task, or make changes before that confirmation.
+4. After the user replies `1`, acknowledge the title and continue with the user's pending request.
 
 Keep the title concise and task-oriented. Do not add an inferred title, edit the user's title, or persist conversation names in repository files.
