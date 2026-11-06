@@ -10,6 +10,13 @@
 - 建议 5 条已写入 `~/.workbuddy/reports/skills-review/2026-11-04.md`（未改动仓库任何文件）。
 - 宠物状态 `ok`。
 
+## 2026-11-05
+- 5 技能，0 错误 / 1 警告（workspace-switcher description 19 字）/ 4 条时间提示；领先远端 1 个提交，待提交 1 项（自动化 memory 自身）。
+- 新发现（脚本查不出）：`~/.claude/skills/` 只有 4 个技能且是**实体拷贝**非软链 → 11-03 新增的 simple-api-doc 根本没安装；conversation-naming 安装版停在 9-02 老文案，与仓库 9-15 版本已漂移。
+- 复现：`git rm --cached` 需求确认 —— `skills/.DS_Store` 与 `.workbuddy/memory/automations/*/memory.md` 被跟踪（.gitignore 对已跟踪文件无效）。
+- 昨日 3 条建议（audit/project-auditor 合并、simple-api-doc 参考路径、FEEDBACK 死代码）均未采纳，今日复核仍成立，已重新列入。
+- 报告：`~/.workbuddy/reports/skills-review/2026-11-05.md`；宠物 ok。
+
 ## 复用要点
 - 复核工作区路径时看 `~/CareerPlanning/Internet/projects/shiny-5/shiny-sf/.claude/docs/workspaces`（主战场）与 `shiny-4/shiny-sf-4/docs/workspaces`。
 - 判断技能是否真在用：看它产出的文件 mtime，不要看 `skills_repo.py` 的"N 天未改动"或 `skill-stats.json`。
