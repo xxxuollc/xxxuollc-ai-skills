@@ -17,6 +17,12 @@
 - 昨日 3 条建议（audit/project-auditor 合并、simple-api-doc 参考路径、FEEDBACK 死代码）均未采纳，今日复核仍成立，已重新列入。
 - 报告：`~/.workbuddy/reports/skills-review/2026-11-05.md`；宠物 ok。
 
+## 2026-11-06
+- 5 技能，0 错误 / 1 警告（workspace-switcher description） / 4 时间提示；main 已同步，待提交仅自动化 memory 1 项（每日 chore 自动收走，不堆积）。
+- 复核实测：主项目 FEEDBACK.md 仍为 0；simple-api-doc 3 个参考路径仅 API_USAGE 存在，MIGRATION_API/SAMPLE_STRUCTURES 不存在，DATA_INTERFACE_SIMPLE 仍未列；~/.claude/skills 仍是 9-02 四技能实体拷贝、simple-api-doc 未装。
+- 11-04/11-05 建议均未采纳，本轮按价值重新排序列出 5 条：①删 project-auditor 合并入 audit ②修 workspace-switcher 前缀+description ③修 simple-api-doc 参考路径与前缀统一 ④安装目录改 symlink/重拷贝（放大器）⑤删 FEEDBACK 死代码。
+- 报告：`~/.workbuddy/reports/skills-review/2026-11-06.md`；宠物 ok。
+
 ## 复用要点
 - 复核工作区路径时看 `~/CareerPlanning/Internet/projects/shiny-5/shiny-sf/.claude/docs/workspaces`（主战场）与 `shiny-4/shiny-sf-4/docs/workspaces`。
 - 判断技能是否真在用：看它产出的文件 mtime，不要看 `skills_repo.py` 的"N 天未改动"或 `skill-stats.json`。
