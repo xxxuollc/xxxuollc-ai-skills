@@ -29,6 +29,12 @@
 - 建议仍为 5 条（同 11-06 排序），全部未采纳；明确"今天不建议动"了 conversation-naming 与正文重写（先解决合并与安装放大器）。
 - 报告：`~/.workbuddy/reports/skills-review/2026-11-07.md`；宠物 ok。
 
+## 2026-11-08
+- 5 技能，0 错误 / 1 警告（workspace-switcher description）/ 4 时间提示；领先远端 2 提交（每日 chore），待提交仅自动化 memory 1 项。
+- 复核：shiny-sf 8 工作区、FEEDBACK.md 仍 0；simple-api-doc 参考 MIGRATION_API/SAMPLE_STRUCTURES 仍缺失、DATA_INTERFACE_SIMPLE 仍未列；~/.claude/skills diff 确认 conversation-naming 已漂移、simple-api-doc 未装（其余 3 个一致）。
+- 5 条建议与前几日相同（删 project-auditor、修 workspace-switcher、修 simple-api-doc 路径、symlink 安装、删 FEEDBACK 死代码），全部未采纳。
+- 报告：`~/.workbuddy/reports/skills-review/2026-11-08.md`；宠物 ok。
+
 ## 复用要点
 - 复核工作区路径时看 `~/CareerPlanning/Internet/projects/shiny-5/shiny-sf/.claude/docs/workspaces`（主战场）与 `shiny-4/shiny-sf-4/docs/workspaces`。
 - 判断技能是否真在用：看它产出的文件 mtime，不要看 `skills_repo.py` 的"N 天未改动"或 `skill-stats.json`。
