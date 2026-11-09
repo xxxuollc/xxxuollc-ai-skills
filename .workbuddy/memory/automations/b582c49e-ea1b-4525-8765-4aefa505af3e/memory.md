@@ -35,6 +35,14 @@
 - 5 条建议与前几日相同（删 project-auditor、修 workspace-switcher、修 simple-api-doc 路径、symlink 安装、删 FEEDBACK 死代码），全部未采纳。
 - 报告：`~/.workbuddy/reports/skills-review/2026-11-08.md`；宠物 ok。
 
+## 2026-11-09
+- 5 技能，0 错误 / 1 警告（workspace-switcher description）/ 4 时间提示；main 已同步（0/0），待提交仅自动化 memory 1 项。
+- **本轮关键新证据**：shiny-5/shiny-sf 里带 CONTEXT.md 的真实功能工作区有 **19 个**，但 `docs/workspaces/` 顶层只有 **8 个** —— 11 个嵌在 `余姚/`、`龙泉信创/` 二级下。⇒ workspace-switcher 的"列顶层子目录"只能列出 8 个且把分组当工作区（读 `余姚/CONTEXT.md` 必空）。首次把这条排到第 1。
+- `.claude/docs/PROJECT_HEALTH_REPORT.md` 存在（mtime 10-20，5.8KB，扫 18 个工作区）→ 证明 `audit`（`.claude` 前缀那版）确实在用且有用，但正文 glob 写的是单层 `*`、与实际执行（模型自行扩到二级）不符；且报告已过期（18→19，project-cash-money 10-21 新增后未重跑）。
+- simple-api-doc：`YUYAO_NINGBO_DATA_INTERFACE_SIMPLE.md` 已存在（11-03 由该技能产出）却未列入参考；MIGRATION_API / SAMPLE_STRUCTURES 仍不存在；第 42 行前缀与第 14-16 行不一致。
+- 安装层 dp 仍为 9-02 四份实体拷贝：audit/project-auditor/workspace-switcher 与仓库一致，conversation-naming 漂移，simple-api-doc 未装。`readMe.md` 是通用教程抄写、不是本仓库说明。
+- 报告：`~/.workbuddy/reports/skills-review/2026-11-09.md`；宠物 ok。
+
 ## 复用要点
 - 复核工作区路径时看 `~/CareerPlanning/Internet/projects/shiny-5/shiny-sf/.claude/docs/workspaces`（主战场）与 `shiny-4/shiny-sf-4/docs/workspaces`。
 - 判断技能是否真在用：看它产出的文件 mtime，不要看 `skills_repo.py` 的"N 天未改动"或 `skill-stats.json`。
