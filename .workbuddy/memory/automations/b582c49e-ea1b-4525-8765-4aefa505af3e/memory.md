@@ -43,6 +43,18 @@
 - 安装层 dp 仍为 9-02 四份实体拷贝：audit/project-auditor/workspace-switcher 与仓库一致，conversation-naming 漂移，simple-api-doc 未装。`readMe.md` 是通用教程抄写、不是本仓库说明。
 - 报告：`~/.workbuddy/reports/skills-review/2026-11-09.md`；宠物 ok。
 
+## 2026-11-10（**结论转向，务必先读这条**）
+- 5 技能，0 错误 / 1 警告（workspace-switcher description）/ 4 时间提示；main 已同步，待提交仅自动化 memory 1 项。
+- **推翻前 6 天前提：仓库已不是真源。** 项目 `shiny-sf/.agents/skills/`（Codex 读）与 `shiny-sf/.claude/skills/`（Claude Code 读）里的副本**比仓库新且更完整**：audit 项目版 9-03（仓库 8-12）多"第 0 步读 AGENTS.md:15 的 Workspace Output Convention"+整节《报告格式（必须遵守）》六段式契约；conversation-naming / workspace-switcher 项目版 9-30 多 `[skip]` 逃生口，conversation-naming 还去掉了"回复 1"确认协议。10-20 那份 PROJECT_HEALTH_REPORT.md 用的正是项目版格式 → 项目版才是有效版。
+- 5 技能共 **13 份实体拷贝**（仓库 5 + ~/.claude 4 + 项目 .agents 2 + 项目 .claude 2），conversation-naming 有 **3 个版本**；simple-api-doc 一份都没装。
+- **workspace-switcher 实测完全不可用**：项目根 `docs/` 下只有一个 electron md，`docs/workspaces` 不存在 → 照文本扫是 0 个工作区；`~/.claude/skills` 与项目 `.claude/skills` 两个副本也都还是错的。且顶层 8 个里 2 个是分组目录（余姚/龙泉信创）无 CONTEXT.md，13 个真实工作区在二级（余姚 4 + 龙泉信创 9）。
+- `~/.codex/skills/` 只有 `.system` 和 `hatch-pet`，5 个技能全不在 Codex 可见范围。
+- 建议 5 条（报告 `~/.workbuddy/reports/skills-review/2026-11-10.md`）：①项目 audit 回填仓库 ②修 workspace-switcher 前缀+嵌套发现+description ③删 project-auditor ④回填 `[skip]` ⑤用 `agent-skills-sync` 改软链分发。前 4 条都小改，第 5 条要重写。
+- 明确"今天不建议动"：simple-api-doc 正文（质量最好，且没装，改了无感）、audit 的 FEEDBACK.md 步骤（0 个但属优雅降级，别当死代码删）、conversation-naming 英文措辞、readMe.md、.DS_Store 索引。
+- 宠物 ok。**未改仓库任何文件。**
+
 ## 复用要点
 - 复核工作区路径时看 `~/CareerPlanning/Internet/projects/shiny-5/shiny-sf/.claude/docs/workspaces`（主战场）与 `shiny-4/shiny-sf-4/docs/workspaces`。
 - 判断技能是否真在用：看它产出的文件 mtime，不要看 `skills_repo.py` 的"N 天未改动"或 `skill-stats.json`。
+- **复核技能内容前，先比对项目内副本与仓库**：`shiny-sf/.agents/skills`、`shiny-sf/.claude/skills`、`~/.claude/skills` 三处 `diff -u`，别默认仓库是最新版。
+- 安装/分发机制的权威说明在 `~/.workbuddy/skills/agent-skills-sync/SKILL.md`（cc-switch 只能装 ~/.claude/skills、拷贝式、无更新检测；Codex 读 ~/.codex/skills + 项目 .agents/skills，不读 .claude/skills）。
