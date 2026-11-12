@@ -53,6 +53,14 @@
 - 明确"今天不建议动"：simple-api-doc 正文（质量最好，且没装，改了无感）、audit 的 FEEDBACK.md 步骤（0 个但属优雅降级，别当死代码删）、conversation-naming 英文措辞、readMe.md、.DS_Store 索引。
 - 宠物 ok。**未改仓库任何文件。**
 
+## 2026-11-11
+- 5 技能，0 错误 / 1 警告 / 4 时间提示；main 已同步，待提交仅自动化 memory 1 项。
+- **项目侧目录被主人主动重组（本轮最大新发现）**：shiny-sf `.claude/skills/` 移除了 audit、conversation-naming，只剩 project-auditor、workspace-switcher + 新增 `code-review-security`；`.agents/skills/` 现有 audit、conversation-naming + 新增 `concise-response`、`dotnet-to-java`。即仓库外已有 3 个活跃新技能未入库，其中 code-review-security（含 references 铁律/脱敏/git 基线）是全库质量最高的技能正文。
+- 其余复核不变：19 工作区嵌套、HEALTH_REPORT 停 10-20、simple-api-doc 四处均未装、~/.claude conversation-naming 仍 9-02 漂移版、~/.codex/skills 只剩 hatch-pet（.system 消失）。
+- 建议 5 条：①回收 3 个新技能入库 ②audit 回填 .agents 版 ③workspace-switcher 回填+嵌套发现+description ④conversation-naming 三副本统一 ⑤安装 simple-api-doc。前四条小改。
+- 向主人提出：若某条不打算采纳请说一声，从清单撤掉，避免每日复读（连续第 8 天未采纳）。
+- 报告：`~/.workbuddy/reports/skills-review/2026-11-11.md`；宠物 ok。未改仓库任何文件。
+
 ## 复用要点
 - 复核工作区路径时看 `~/CareerPlanning/Internet/projects/shiny-5/shiny-sf/.claude/docs/workspaces`（主战场）与 `shiny-4/shiny-sf-4/docs/workspaces`。
 - 判断技能是否真在用：看它产出的文件 mtime，不要看 `skills_repo.py` 的"N 天未改动"或 `skill-stats.json`。
