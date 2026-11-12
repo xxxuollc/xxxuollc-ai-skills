@@ -19,20 +19,26 @@ description: 提取主流大模型（ChatGPT、DeepSeek，可扩展）的历史�
 
 ## 用法
 
+**统一入口（推荐）**：`app.py` 起本地网页（http://localhost:8765），选平台 → 贴链接/填路径 → 点「获取」→ 三类产物自动生成。三条通道共用下面的 extractor 和同一套产物布局：
+
+```bash
+app.py            # 起服务（127.0.0.1:8765，只跑本机，勿转发外网）
+```
+
+单命令方式：
+
 ```bash
 # ① ChatGPT 官方导出（zip 或解出的 conversations.json 都收）
 extract.py chatgpt-export ~/Downloads/chatgpt-export.zip --out normalized.json
 
-# ② 分享页（两家同构）
-extract.py chatgpt-share "https://chatgpt.com/share/xxx" --out normalized.json
-extract.py deepseek-share "https://chat.deepseek.com/a/chat/s/xxx" --out normalized.json
+# ② DeepSeek 分享链接（API 尝试 → Playwright DOM 兜底，如实失败不硬猜）
+deepseek_fetch.py "https://chat.deepseek.com/a/chat/s/xxx" --out normalized.json
 
-# ③ DeepSeek DOM（登录态在 ~/.workbuddy/secrets/deepseek.state.json）
-deepseek_dom.py login                 # 人工扫码/验证码，一次
-deepseek_dom.py pull --conv 关键词 --out normalized.json
+# ③ 抖音私信摘要（登录态在 douyin-dm-export 技能目录 state.json）
+douyin_digest.py pull   # 脚本在 ~/.workbuddy/scripts/
 
 # 渲染产物（三种产物一次出齐）
-render.py normalized.json --out ~/.workbuddy/exports/llm-chat/chatgpt/2026-11-12/
+render.py normalized.json --out ~/.workbuddy/exports/llm-chat/<platform>/<日期>/
 ```
 
 ## 产物布局（按会话分）

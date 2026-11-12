@@ -61,6 +61,14 @@
 - 向主人提出：若某条不打算采纳请说一声，从清单撤掉，避免每日复读（连续第 8 天未采纳）。
 - 报告：`~/.workbuddy/reports/skills-review/2026-11-11.md`；宠物 ok。未改仓库任何文件。
 
+## 2026-11-12
+- **技能增至 6 个**：今日 09:17 新增 `llm-chat-extract`（78 行 + 3 脚本，全库唯一带脚本的技能，质量最好的新技能之一）。0 错误 / 1 警告（workspace-switcher description）/ 4 时间提示；main 已同步，待提交 0 项。
+- **新技能首用会连撞坑（本轮主要新证据）**：①`## 用法` 写裸 `extract.py`，实际在 `scripts/` 下，照抄 command not found；②文档明令"不要正则硬猜正文"，`extract.py` 的 `PARTS_RE` 恰恰在硬扫 `"parts":[...]` 并 `return 0`，产出全 unknown 的静默错数据；③`deepseek_dom.py` 的 `is_logged_in` 用"cookie 名含 token/session"判定，访客态会误判已登录 → 采到登录页不报 NEED_LOGIN；④`render.py` meta 把会话 `createdAt` 标成"提取"时间（真值 `extractedAt` 未用）。
+- 复核不变：shiny-sf 根 `docs/` 只有 electron md，`docs/workspaces` 不存在 → workspace-switcher 两个副本（仓库 + 项目 .claude，后者只多 `[skip]`）前缀仍全错；顶层 8 个里 余姚/龙泉信创 是分组，真实工作区 19（13 在二级）；HEALTH_REPORT 停 10-20（扫 18）；FEEDBACK.md 仍 0。
+- 外部 3 个技能（code-review-security / concise-response / dotnet-to-java）仍未入库；`llm-chat-extract` **五个安装位置全都没有**。
+- 建议 5 条：①workspace-switcher 前缀+两级发现+description ②llm-chat-extract 用法路径+3 处脚本 bug ③audit 回填 .agents 版六段式契约+glob 两级 ④删 project-auditor ⑤分发改 symlink（要重写）。③④⑤为连续第 9 天未采纳项。
+- 报告：`~/.workbuddy/reports/skills-review/2026-11-12.md`；宠物 ok。未改仓库任何文件（py_compile 产生的 `__pycache__` 已删，git status 为空）。
+
 ## 复用要点
 - 复核工作区路径时看 `~/CareerPlanning/Internet/projects/shiny-5/shiny-sf/.claude/docs/workspaces`（主战场）与 `shiny-4/shiny-sf-4/docs/workspaces`。
 - 判断技能是否真在用：看它产出的文件 mtime，不要看 `skills_repo.py` 的"N 天未改动"或 `skill-stats.json`。
