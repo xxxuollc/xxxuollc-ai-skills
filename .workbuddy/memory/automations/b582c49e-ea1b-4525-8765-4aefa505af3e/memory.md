@@ -69,6 +69,12 @@
 - 建议 5 条：①workspace-switcher 前缀+两级发现+description ②llm-chat-extract 用法路径+3 处脚本 bug ③audit 回填 .agents 版六段式契约+glob 两级 ④删 project-auditor ⑤分发改 symlink（要重写）。③④⑤为连续第 9 天未采纳项。
 - 报告：`~/.workbuddy/reports/skills-review/2026-11-12.md`；宠物 ok。未改仓库任何文件（py_compile 产生的 `__pycache__` 已删，git status 为空）。
 
+## 2026-11-13
+- 6 技能，0 错误 / 1 警告（workspace-switcher description）/ 4 时间提示；main 领先 1（chore），待提交仅自动化 memory 1 项。
+- **主人部分采纳了 llm-chat-extract 建议**：commit 8a5ea2a 新增 app.py 统一入口（198 行）+ deepseek_fetch.py（182 行），SKILL.md 用法改 app.py 推荐。残留：单命令块仍裸脚本名、extract.py PARTS_RE 硬猜、deepseek_dom is_logged_in 宽松判定、render.py createdAt 误标——全部核实仍在。
+- 建议 5 条：①workspace-switcher 前缀+两级发现+description ②llm-chat-extract 4 处残留 ③audit 回填 .agents 版 ④删 project-auditor（连续第 10 天）⑤symlink 分发。外部 13 份拷贝、simple-api-doc 五处未装、~/.claude conversation-naming 9-02 漂移均复核不变。
+- 报告：`~/.workbuddy/reports/skills-review/2026-11-13.md`；宠物 ok。未改仓库任何文件。
+
 ## 复用要点
 - 复核工作区路径时看 `~/CareerPlanning/Internet/projects/shiny-5/shiny-sf/.claude/docs/workspaces`（主战场）与 `shiny-4/shiny-sf-4/docs/workspaces`。
 - 判断技能是否真在用：看它产出的文件 mtime，不要看 `skills_repo.py` 的"N 天未改动"或 `skill-stats.json`。
