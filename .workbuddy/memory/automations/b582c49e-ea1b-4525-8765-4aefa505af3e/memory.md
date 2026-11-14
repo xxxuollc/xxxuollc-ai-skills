@@ -75,6 +75,14 @@
 - 建议 5 条：①workspace-switcher 前缀+两级发现+description ②llm-chat-extract 4 处残留 ③audit 回填 .agents 版 ④删 project-auditor（连续第 10 天）⑤symlink 分发。外部 13 份拷贝、simple-api-doc 五处未装、~/.claude conversation-naming 9-02 漂移均复核不变。
 - 报告：`~/.workbuddy/reports/skills-review/2026-11-13.md`；宠物 ok。未改仓库任何文件。
 
+## 2026-11-14
+- 6 技能，0 错误 / 1 警告（workspace-switcher description）/ 4 时间提示；main 已同步，待提交 0 项，连续第 11 天未改仓库文件。
+- **新发现**：shiny-sf 工作区组成又变——顶层新增 6 个扁平工作区（auditOutInfo/build-fix/code-review-security/corp-data-source-bigid-fix/low-income-import-compat/project-cash-money），总数仍 19（6 扁平 + 余姚 4 + 龙泉信创 9）。HEALTH_REPORT（10-20，扫旧 18）双重过期。
+- 逐一复核 llm-chat-extract 4 处残留 bug 全在：SKILL.md:32-41 裸脚本名、extract.py:129-210 PARTS_RE 硬猜、deepseek_dom.py:88 宽松 is_logged_in、render.py:68,97 createdAt 误标。
+- audit 仓库版 vs 项目 .agents 版 diff 确认仍不同；FEEDBACK.md 仍 0；simple-api-doc MIGRATION_API/SAMPLE_STRUCTURES 仍缺失、DATA_INTERFACE_SIMPLE 仍未列。
+- 建议 5 条同 11-13 排序（workspace-switcher / llm-chat-extract 残留 / audit 回填 / 删 project-auditor / symlink 分发），全部未采纳。
+- 报告：`~/.workbuddy/reports/skills-review/2026-11-14.md`；宠物 ok。未改仓库任何文件。
+
 ## 复用要点
 - 复核工作区路径时看 `~/CareerPlanning/Internet/projects/shiny-5/shiny-sf/.claude/docs/workspaces`（主战场）与 `shiny-4/shiny-sf-4/docs/workspaces`。
 - 判断技能是否真在用：看它产出的文件 mtime，不要看 `skills_repo.py` 的"N 天未改动"或 `skill-stats.json`。
