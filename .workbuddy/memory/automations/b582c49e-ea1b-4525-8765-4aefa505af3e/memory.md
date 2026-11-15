@@ -83,6 +83,12 @@
 - 建议 5 条同 11-13 排序（workspace-switcher / llm-chat-extract 残留 / audit 回填 / 删 project-auditor / symlink 分发），全部未采纳。
 - 报告：`~/.workbuddy/reports/skills-review/2026-11-14.md`；宠物 ok。未改仓库任何文件。
 
+## 2026-11-15
+- 6 技能，0 错误 / 1 警告（workspace-switcher description）/ 4 时间提示；main 已同步，待提交仅自动化 memory 1 项。连续第 12 天未改仓库文件。
+- 全部复核与 11-14 一致，无新变化：项目 .agents/.claude 技能清单未变、19 工作区（6 扁平 + 余姚 4 + 龙泉信创 9）、FEEDBACK.md 0、llm-chat-extract 4 处残留 bug 全在（SKILL.md:32-41 / extract.py:137 / deepseek_dom.py:88 / render.py:68,97）、simple-api-doc MIGRATION_API/SAMPLE_STRUCTURES 缺 + DATA_INTERFACE_SIMPLE 未列、audit 仓库版≠.agents 版。
+- 建议 5 条同 11-13/11-14 排序，全部未采纳；报告已向主人正式提出"不采纳请说一声，撤出清单"（11-11 口头提过，本轮写进报告备注）。
+- 报告：`~/.workbuddy/reports/skills-review/2026-11-15.md`；宠物 ok。未改仓库任何文件。
+
 ## 复用要点
 - 复核工作区路径时看 `~/CareerPlanning/Internet/projects/shiny-5/shiny-sf/.claude/docs/workspaces`（主战场）与 `shiny-4/shiny-sf-4/docs/workspaces`。
 - 判断技能是否真在用：看它产出的文件 mtime，不要看 `skills_repo.py` 的"N 天未改动"或 `skill-stats.json`。
