@@ -89,6 +89,16 @@
 - 建议 5 条同 11-13/11-14 排序，全部未采纳；报告已向主人正式提出"不采纳请说一声，撤出清单"（11-11 口头提过，本轮写进报告备注）。
 - 报告：`~/.workbuddy/reports/skills-review/2026-11-15.md`；宠物 ok。未改仓库任何文件。
 
+## 2026-11-16
+- 6 技能，0 错误 / 1 警告 / 4 时间提示；main 领先 1（chore），待提交 1 项（自动化 memory）。连续第 13 天未改仓库文件。
+- **三条新证据**（本轮主要增量，此前没有）：
+  1. 工作区布局再变：shiny-sf `.claude/docs/workspaces` 现 8 顶层（6 扁平 + 余姚/龙泉信创 两分组）、二级 26 个目录、**仅 19 个带 CONTEXT.md**；7 个无 CONTEXT.md（余姚/[项目实施控制]、余姚/企业贡献度预警、龙泉/申请金额自动计算、龙泉-低收入农户、龙泉-共富清单库 等）→ 一层扫描会同时漏 13 个嵌套 + 误把 2 个分组当工作区。
+  2. **conversation-naming 仓库版是 4 份拷贝里唯一坏的**：`~/.claude`(9-02) 与项目 `.agents`(9-30) 都已删掉"必须回 1 才继续"并加 `[skip]`，仓库(9-15) 仍保留硬阻塞 → 仓库在向外扩散回归版。结论方向与 11-10 所述"项目版更新"一致但更明确：**这份的仓库版是坏的**。
+  3. **simple-api-doc 契约未落地**：10-19 真实产出 `YUYAO_NINGBO_SHAREHOLDER_PARSE_API.md`(868B) 缺 JSON 示例、缺响应外壳说明、缺错误节、字段表无类型列 → 正文第 26/29/37 行四成要求被跳过。据此新增建议"加产出前 6 项自检"。
+- 建议 5 条：①workspace-switcher 前缀+两级+分组过滤+description ②删 project-auditor + audit glob 改两级（+可选回填 .agents 六段式）③conversation-naming 回填安装版 ④simple-api-doc 自检节+参考路径 ⑤llm-chat-extract 4 处残留（全部核实仍在：SKILL.md:32-41 裸脚本名 / extract.py:137 PARTS_RE / deepseek_dom.py:88 宽松 is_logged_in / render.py:68,97 createdAt 误标）。
+- **正式放弃列入**：symlink 分发（第 5 天列入从未采纳，且属基础设施，应先修内容）。
+- 报告：`~/.workbuddy/reports/skills-review/2026-11-16.md`；宠物 ok。未改仓库任何文件。
+
 ## 复用要点
 - 复核工作区路径时看 `~/CareerPlanning/Internet/projects/shiny-5/shiny-sf/.claude/docs/workspaces`（主战场）与 `shiny-4/shiny-sf-4/docs/workspaces`。
 - 判断技能是否真在用：看它产出的文件 mtime，不要看 `skills_repo.py` 的"N 天未改动"或 `skill-stats.json`。
